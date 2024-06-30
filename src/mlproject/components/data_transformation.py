@@ -25,8 +25,8 @@ class DataTransformation:
         #this function is responsible for data transformation
         try:
             # Create Column Transformer with 3 types of transformers
-            num_cols = ["writing score", "reading score"]
-            cat_cols = ["gender", "race/ethnicity", "parental level of education", "lunch", "test preparation course"]
+            num_cols = ["writing_score", "reading_score"]
+            cat_cols = ["gender", "race_ethnicity", "parental_level_of_education", "lunch", "test_preparation_course"]
             num_pipeline = Pipeline(steps=[
                 ("imputer", SimpleImputer(strategy='median')),
                 ("scaler", StandardScaler())
@@ -63,8 +63,8 @@ class DataTransformation:
             # Load preprocessor object
             preprocessing_obj = self.get_data_transformer_object()
 
-            target_column_name = "math score"
-            numerical_columns = ["writing score", "reading score"]
+            target_column_name = "math_score"
+            numerical_columns = ["writing_score", "reading_score"]
             
             #divide the train dataset into dependent and independent features
             input_features_train_df = train_df.drop(columns=[target_column_name], axis=1)
