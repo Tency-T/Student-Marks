@@ -20,7 +20,8 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         try:
             # Reading data from MySQL
-            df = read_sql_data()
+            df = pd.read_csv(os.path.join('notebook/data', 'raw.csv'))
+
             if df is None or df.empty:
                 raise ValueError("No data found to ingest")
             logging.info('Reading completed from MySQL database')
