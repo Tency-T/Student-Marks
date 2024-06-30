@@ -7,4 +7,9 @@ scikit-learn
 seaborn
 catboost
 xgboost
+mlflow
+httpx
+dagshub
+gradio
+gradio-client
 #-e .
